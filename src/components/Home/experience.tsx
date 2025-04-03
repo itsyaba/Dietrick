@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export default function WorkExperienceSection() {
   const experiences = [
     {
+      id: 0,
       year: "2021 - Current",
       title: "Senior UI/UX Designer at",
       company: "Vektora Studio",
@@ -10,6 +11,8 @@ export default function WorkExperienceSection() {
         "Work on various UI/UX related projects across various business sectors.",
     },
     {
+      id: 1,
+
       year: "2020 - 2021",
       title: "Web flow Developer at",
       company: "Hvolen Studio",
@@ -17,6 +20,8 @@ export default function WorkExperienceSection() {
         "Take part in various web development related projects in various business sectors.",
     },
     {
+      id: 2,
+
       year: "2019 - 2020",
       title: "Graphic Designer at",
       company: "Future Fast",
@@ -49,9 +54,9 @@ export default function WorkExperienceSection() {
       <div className="flex flex-col md:flex-row min-h-[50vh] max-w-[90%] mx-auto">
         {experiences.map((exp, index) => (
           <motion.div
-            key={index}
-            className={`self-${
-              index === 0 ? "start" : index === 1 ? "center" : "end"
+            key={exp.id}
+            className={`self-start self-${
+              exp.id === 0 ? "start" : exp.id === 1 ? "center" : "end"
             }`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
