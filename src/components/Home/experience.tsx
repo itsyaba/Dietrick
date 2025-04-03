@@ -55,8 +55,12 @@ export default function WorkExperienceSection() {
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.id}
-            className={`self-start self-${
-              exp.id === 0 ? "start" : exp.id === 1 ? "center" : "end"
+            className={` w-full md:w-auto ${
+              exp.id === 0
+                ? "self-start"
+                : exp.id === 1
+                ? "self-center"
+                : "self-end"
             }`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
