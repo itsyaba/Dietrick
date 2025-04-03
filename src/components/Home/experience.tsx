@@ -11,7 +11,7 @@ export default function WorkExperienceSection() {
     },
     {
       year: "2020 - 2021",
-      title: "Webflow Developer at",
+      title: "Web flow Developer at",
       company: "Hvolen Studio",
       description:
         "Take part in various web development related projects in various business sectors.",
@@ -19,7 +19,7 @@ export default function WorkExperienceSection() {
     {
       year: "2019 - 2020",
       title: "Graphic Designer at",
-      company: "Future Fast Indonesia",
+      company: "Future Fast",
       description:
         "Work on various graphic design projects across various business sectors.",
     },
