@@ -135,7 +135,7 @@ export function TestimonialsSection() {
             // animate={{ opacity: 1, y: 0 }}
             // transition={{ delay: 0.2 }}
           >
-            What Our Clients Say
+            Testimonials
           </h2>
           <motion.div
             className="stars flex justify-center gap-2 text-4xl"
