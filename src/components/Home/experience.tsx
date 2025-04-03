@@ -49,7 +49,7 @@ export default function WorkExperienceSection() {
       <div className="flex flex-col md:flex-row min-h-[50vh] max-w-[90%] mx-auto">
         {experiences.map((exp, index) => (
           <motion.div
-            key={exp.year}
+            key={index}
             className={`self-${
               index === 0 ? "start" : index === 1 ? "center" : "end"
             }`}
