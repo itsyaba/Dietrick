@@ -10,35 +10,41 @@ export function Navbar() {
     >
       <div className="flex gap-12">
         <Link
-          to="/"
+          to="#"
           className="text-sm font-medium tracking-wide hover:text-black/70 transition-colors"
         >
           HOME
         </Link>
         <Link
-          to="/works"
+          to="#ABOUT"
           className="text-sm font-medium tracking-wide hover:text-black/70 transition-colors"
         >
-          WORKS
+          ABOUT
         </Link>
         <Link
-          to="/bookmarks"
+          to="#services"
           className="text-sm font-medium tracking-wide hover:text-black/70 transition-colors"
         >
-          BOOKMARKS
+          SERVICES
         </Link>
         <Link
-          to="/design-gallery"
+          to="#portfolio"
           className="text-sm font-medium tracking-wide hover:text-black/70 transition-colors"
         >
-          DESIGN GALLERY
+          PORTFOLIO
+        </Link>
+        <Link
+          to="#contact"
+          className="text-sm font-medium tracking-wide hover:text-black/70 transition-colors"
+        >
+          CONTACT ME
         </Link>
       </div>
 
       <div className="flex items-center gap-12">
-        {/* <span className="text-sm font-medium tracking-wide">
-          Addis Ababa, Ethiopia
-        </span> */}
+        <span className="text-sm font-medium tracking-wide">
+          New York, United States
+        </span>
         <span className="text-sm font-medium tracking-wide">
           {new Date().toLocaleTimeString("en-US", {
             hour12: false,

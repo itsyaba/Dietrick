@@ -1,3 +1,8 @@
+import img from "@/assets/image.jpg";
+import img2 from "@/assets/image01.jpg";
+import img3 from "@/assets/image02.jpg";
+import img5 from "@/assets/img.jpg";
+
 export const projects = [
   {
     id: 1,
@@ -5,7 +10,7 @@ export const projects = [
     description:
       "A modern e-commerce platform with advanced filtering, animations, and a seamless checkout experience.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: img5,
     link: "https://example.com/ecommerce",
     githubLink: "https://github.com/username/ecommerce",
     category: "web",
@@ -16,7 +21,7 @@ export const projects = [
     description:
       "A creative portfolio for a photographer with immersive galleries and smooth transitions.",
     tags: ["React", "GSAP", "Styled Components"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: img2,
     link: "https://example.com/portfolio",
     githubLink: "https://github.com/username/portfolio",
     category: "web",
@@ -27,28 +32,19 @@ export const projects = [
     description:
       "An intuitive admin dashboard with data visualization, dark mode, and responsive design.",
     tags: ["Next.js", "Chart.js", "Tailwind CSS"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: img3,
     link: "https://example.com/dashboard",
     githubLink: "https://github.com/username/dashboard",
     category: "ui",
   },
-  {
-    id: 4,
-    title: "Mobile App UI",
-    description:
-      "UI/UX design and prototype for a fitness tracking mobile application with animations.",
-    tags: ["Figma", "Prototyping", "UI/UX"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
-    link: "https://example.com/fitness-app",
-    category: "mobile",
-  },
+
   {
     id: 5,
     title: "Marketing Website",
     description:
       "A high-converting landing page with interactive elements and optimized performance.",
     tags: ["HTML", "CSS", "JavaScript", "GSAP"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: img2,
     link: "https://example.com/marketing",
     githubLink: "https://github.com/username/marketing",
     category: "web",
@@ -59,7 +55,7 @@ export const projects = [
     description:
       "A full-featured web application with authentication, real-time updates, and animations.",
     tags: ["React", "Firebase", "Tailwind CSS", "Framer Motion"],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: img,
     link: "https://example.com/webapp",
     githubLink: "https://github.com/username/webapp",
     category: "web",

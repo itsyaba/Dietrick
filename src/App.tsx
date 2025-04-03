@@ -1,42 +1,41 @@
-// import WorkExperienceSection from "./components/experience";
-import { Hero } from "./components/HeroSection";
-import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Home/HeroSection";
+import { Navbar } from "./components/Home/Navbar";
 
 import { motion } from "framer-motion";
 import {
   ArrowRight,
   ExternalLink,
-  Github,
   Linkedin,
   Mail,
   Download,
+  Instagram,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
-import { SkillBar } from "@/components/skill-bar";
 import { AnimatedCounter } from "@/components/animated-counter";
-import { ExperienceTimeline } from "@/components/experience-timeline";
-import { ProjectFilter } from "@/components/project-filter";
 import { projects } from "@/data/projects";
-import { skills } from "@/data/skills";
 import { Link } from "react-router-dom";
 import ContactForm from "./components/contact-form";
 
 import dietrick from "@/assets/image03.jpg";
+import ServicesSection from "./components/Home/ServiceSection";
+import WorkExperienceSection from "./components/Home/experience";
 
 function App() {
   return (
     <main className="min-h-screen bg-gray-50 font-poppins text-black">
       <Navbar />
       <Hero />
-      {/* <WorkExperienceSection /> */}
+      <ServicesSection />
+      <WorkExperienceSection />
       <section id="about" className="py-24 md:py-32  ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
@@ -47,14 +46,13 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className=" mb-8 leading-relaxed">
-                I'm a passionate developer and designer with a focus on creating
-                beautiful, functional, and accessible web experiences. With a
-                background in both design and development, I bridge the gap
-                between aesthetics and functionality.
+                Hello, I'm Dietrick Cyrus, With over 5 years of experience
+                building successful sales pipelines at startups and enterprises,
+                an expert in cold outreach and email marketing.
               </p>
             </motion.div>
           </div>
@@ -63,7 +61,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
               className="relative h-full w-full rounded-lg overflow-hidden "
             >
@@ -78,75 +76,65 @@ function App() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ margin: "-100px" }}
                 transition={{ duration: 0.5 }}
               >
                 <h3 className="text-2xl font-bold mb-6">My Journey</h3>
                 <p className=" mb-6 leading-relaxed">
-                  With over 5 years of experience in web development and design,
-                  I've worked on a variety of projects from small business
-                  websites to large-scale applications. My approach combines
-                  technical expertise with creative problem-solving to deliver
-                  solutions that not only look great but also perform
-                  exceptionally well.
+                  I specialize in simplifying complex financial systems for
+                  small to mid-sized businesses. My approach focuses on
+                  streamlining processes, optimizing budgets, and implementing
+                  strategic financial planning to help businesses scale
+                  efficiently. Whether working with multimillion-dollar budgets
+                  or navigating the financial intricacies of growing
+                  organizations, I provide clear, actionable solutions that
+                  drive sustainable success. My expertise spans both nonprofit
+                  organizations and corporate consulting, allowing me to bring a
+                  well-rounded perspective to every project. vel.
                 </p>
                 <p className=" mb-8 leading-relaxed">
-                  I'm passionate about creating accessible, user-friendly
-                  interfaces that provide seamless experiences across all
-                  devices. When I'm not coding, you can find me exploring new
-                  design trends, contributing to open-source projects, or
-                  experimenting with new technologies.
+                  Fluent in both English and Spanish, I excel at bridging
+                  communication gaps across diverse teams and markets, ensuring
+                  seamless collaboration and clarity in financial
+                  decision-making. My cross-sector experience enables me to
+                  adapt to different business needs, offering tailored
+                  strategies that align with unique industry challenges. By
+                  combining financial acumen with a practical, results-driven
+                  approach, I help businesses build strong financial
+                  foundations, empowering them to focus on growth and long-term
+                  success.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
                 <div className="text-center">
                   <h4 className="text-3xl font-bold text-black mb-2">
-                    <AnimatedCounter from={0} to={5} duration={2} />+
+                    <AnimatedCounter from={0} to={15} duration={2} />+
                   </h4>
                   <p className="text-sm text-gray-400">Years Experience</p>
                 </div>
                 <div className="text-center">
                   <h4 className="text-3xl font-bold  mb-2">
-                    <AnimatedCounter from={0} to={50} duration={2} />+
+                    <AnimatedCounter from={0} to={100} duration={2} />+
                   </h4>
                   <p className="text-sm text-gray-600">Projects Completed</p>
                 </div>
+
                 <div className="text-center">
                   <h4 className="text-3xl font-bold  mb-2">
-                    <AnimatedCounter from={0} to={30} duration={2} />+
+                    <AnimatedCounter from={0} to={500} duration={2} />+
                   </h4>
-                  <p className="text-sm text-gray-600">Happy Clients</p>
+                  <p className="text-sm text-gray-600">Connection</p>
                 </div>
                 <div className="text-center">
                   <h4 className="text-3xl font-bold  mb-2">
-                    <AnimatedCounter from={0} to={15} duration={2} />+
+                    <AnimatedCounter from={0} to={2} duration={2} />+
                   </h4>
-                  <p className="text-sm text-gray-600">Awards Won</p>
+                  <p className="text-sm text-gray-600">Languages</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <Button
-                    variant="outline"
-                    className="bg-gray-300 text-blue-900  border-none"
-                    size="icon"
-                    asChild
-                  >
-                    <Link
-                      to="https://github.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="GitHub"
-                    >
-                      <Github className="h-8 w-8" />
-                    </Link>
-                  </Button>
-                </motion.div>
                 <motion.div
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
@@ -208,119 +196,6 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-24 md:py-32 bg-gray-900/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                Work <span className="">Experience</span>
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                My professional journey in the tech industry, showcasing my
-                roles and responsibilities at various companies.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <ExperienceTimeline />
-          </div>
-
-          <div className="mt-16 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <Button
-                asChild
-                variant="outline"
-                className="bg-gray-300 text-blue-900  border-none group"
-              >
-                <Link
-                  to="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  Download Full Resume
-                  <Download className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-24 md:py-32 ">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                My <span className="">Skills</span>
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                I've developed expertise in various technologies and design
-                principles, allowing me to create comprehensive solutions for
-                web projects.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {skills.slice(0, 4).map((skill, index) => (
-                <SkillBar
-                  key={skill.name}
-                  name={skill.name}
-                  percentage={skill.percentage}
-                  delay={0.1 * (index + 1)}
-                />
-              ))}
-            </div>
-            <div className="space-y-6">
-              {skills.slice(4, 8).map((skill, index) => (
-                <SkillBar
-                  key={skill.name}
-                  name={skill.name}
-                  percentage={skill.percentage}
-                  delay={0.1 * (index + 5)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section id="projects" className="py-24 md:py-32 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,7 +203,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
@@ -339,16 +214,13 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-600 mb-8 leading-relaxed">
-                A selection of my recent work showcasing my skills in design,
-                development, and animation.
+                A selection of my recent work showcasing my skills.
               </p>
             </motion.div>
-
-            <ProjectFilter />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -370,7 +242,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
               <Button
@@ -395,7 +267,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
@@ -406,7 +278,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-600 mb-8 leading-relaxed">
@@ -419,7 +291,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
             >
@@ -446,7 +318,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
             >
@@ -475,7 +347,7 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
             >
@@ -505,16 +377,16 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 md:py-32 bg-muted/30">
+      <section id="contact" className="py-24 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+              <h2 className="text-3xl md:text-6xl font-bold mb-6 tracking-tight">
                 Get in <span className="">Touch</span>
               </h2>
             </motion.div>
@@ -522,12 +394,14 @@ function App() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-700 mb-8 leading-relaxed">
                 Have a project in mind or want to discuss potential
-                collaborations? I'd love to hear from you!
+                collaborations?
+                <br />
+                I'd love to hear from you!
               </p>
             </motion.div>
           </div>
@@ -536,16 +410,23 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
+                  <Phone className="h-8 w-8 mr-3 mt-1 " />
+                  <div>
+                    <h4 className="font-medium">Phone</h4>
+                    <p className="text-gray-700">+1(646) 359-8503</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
                   <Mail className="h-8 w-8 mr-3 mt-1 " />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-700">hello@example.com</p>
+                    <p className="text-gray-700">Carolinabonaparte@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -556,10 +437,10 @@ function App() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Github className="h-5 w-5 mr-3 mt-1 " />
+                  <Instagram className="h-5 w-5 mr-3 mt-1 " />
                   <div>
-                    <h4 className="font-medium">GitHub</h4>
-                    <p className="text-gray-700">github.com/username</p>
+                    <h4 className="font-medium">instagram</h4>
+                    <p className="text-gray-700">instagram.com/username</p>
                   </div>
                 </div>
               </div>
@@ -597,9 +478,9 @@ function App() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ margin: "-100px" }}
               transition={{ duration: 0.5 }}
-              className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
+              className="bg-gray-200 p-8 rounded-lg shadow-4xl"
             >
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
               <ContactForm />

@@ -51,7 +51,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex items-start  justify-between gap-16 pl-4 flex-row ml-24 ">
+          <div className="flex items-start  justify-between gap-16 pl-4 flex-row ">
             {/* Social links */}
             <div className="flex gap-6 pl-4">
               {socialLinks.map(({ href, Icon }, index) => (
@@ -77,8 +77,8 @@ export function Hero() {
                 an expert in cold outreach and email marketing.
               </p>
 
-              <Button className="w-fit px-8 py-6 text-base rounded-full bg-sky-500 hover:bg-black/90 transition-colors text-white">
-                Contact me
+              <Button className="w-fit px-8 py-6 text-base rounded-lg bg-sky-500 hover:bg-black/90 transition-colors text-white">
+                Schedule a Consultation
               </Button>
             </div>
           </div>
