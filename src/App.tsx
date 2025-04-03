@@ -21,6 +21,7 @@ import ContactForm from "./components/contact-form";
 import dietrick from "@/assets/image03.jpg";
 import ServicesSection from "./components/Home/ServiceSection";
 import WorkExperienceSection from "./components/Home/experience";
+import { TestimonialsSection } from "./components/Home/TestimonialSection";
 
 function App() {
   return (
@@ -260,121 +261,7 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 md:py-32 ">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                Client <span className="">Testimonials</span>
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                What clients and colleagues have to say about working with me.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
-            >
-              <div className="flex flex-col h-full">
-                <div className="mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-400 italic mb-6 flex-grow">
-                  "An exceptional developer who consistently delivers
-                  high-quality work. Their attention to detail and creative
-                  problem-solving skills made our project a success."
-                </p>
-                <div>
-                  <p className="font-semibold">Sarah Johnson</p>
-                  <p className="text-sm text-gray-400">CEO, TechStart Inc.</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
-            >
-              <div className="flex flex-col h-full">
-                <div className="mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-400 italic mb-6 flex-grow">
-                  "Working with this developer was a pleasure. They understood
-                  our vision immediately and transformed it into a beautiful,
-                  functional website that exceeded our expectations."
-                </p>
-                <div>
-                  <p className="font-semibold">Michael Chen</p>
-                  <p className="text-sm text-gray-400">
-                    Marketing Director, Innovate Solutions
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-gray-800 text-white p-8 rounded-lg shadow-sm border"
-            >
-              <div className="flex flex-col h-full">
-                <div className="mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-400 italic mb-6 flex-grow">
-                  "Not only is their technical skill impressive, but their
-                  communication and project management made the entire process
-                  smooth and stress-free. I highly recommend their services."
-                </p>
-                <div>
-                  <p className="font-semibold">Emily Rodriguez</p>
-                  <p className="text-sm text-gray-400">
-                    Founder, Design Collective
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-24 md:py-32">
