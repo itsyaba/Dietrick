@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const galleryItems = [
   {
@@ -37,17 +37,27 @@ const galleryItems = [
 ];
 
 export default function WhyWorkWithUs() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>();
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="w-full min-h-screen  px-12 py-24">
-      <div className="w-full flex items-start md:items-baseline justify-center md:gap-24 flex-col md:flex-row">
+    <div className="w-full min-h-screen px-12 py-24">
+      <div className="w-full flex items-start md:items-baseline justify-center  flex-col md:flex-row">
         <h1 className="text-7xl font-medium text-gray-400">04</h1>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "circIn" }}
-          className="mb-16"
+          className="mb-3"
         >
           <h2 className="text-6xl md:text-7xl font-bold leading-tight">
             Why
@@ -56,92 +66,98 @@ export default function WhyWorkWithUs() {
           </h2>
         </motion.div>
       </div>
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-full mx-auto">
         <motion.div
-          className="md:flex gap-36 md:gap-6 grid"
+          className="md:flex gap-6 grid"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          {galleryItems.map((item) => (
-            <motion.div
-              key={item.id}
-              className="relative "
-              initial={{ flex: 1 }}
-              animate={{
-                flex: hoveredItem === item.id ? 3 : 1,
-                transition: { duration: 0.4 },
-              }}
-              onViewportEnter={() => setHoveredItem(item.id)}
-              onHoverStart={() => setHoveredItem(item.id)}
-              onHoverEnd={() => setHoveredItem(null)}
-            >
+          {galleryItems.map((item) => {
+            const isActive = isMobile || hoveredItem === item.id;
+
+            return (
               <motion.div
-                className={`relative h-[500px] rounded-lg overflow-clip ${
-                  hoveredItem === item.id ? "cursor-default" : "cursor-pointer"
-                }`}
+                key={item.id}
+                className="relative"
+                initial={{ flex: 1 }}
+                animate={{
+                  flex: isActive ? 3 : 1,
+                  transition: { duration: 0.4 },
+                }}
+                {...(!isMobile && {
+                  onHoverStart: () => setHoveredItem(item.id),
+                  onHoverEnd: () => setHoveredItem(null),
+                  onViewportEnter: () => setHoveredItem(item.id),
+                })}
               >
-                {hoveredItem !== item.id && (
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover rounded-lg brightness-75"
-                  />
-                )}
-                <AnimatePresence>
-                  {hoveredItem === item.id ? (
-                    <div className="flex h-full flex-col-reverse md:flex-row mt-36 md:mt-0">
-                      <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.4 }}
-                        className="flex-1 p-8 flex flex-col justify-center"
-                      >
-                        <motion.h2
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          className="text-2xl text-black font-medium mb-4"
-                        >
-                          {item.title}
-                        </motion.h2>
-                        <motion.p
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.1 }}
-                          className="text-black leading-relaxed"
-                        >
-                          {item.description}
-                        </motion.p>
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.1 }}
-                        className="flex-1"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                      </motion.div>
-                    </div>
-                  ) : (
-                    <motion.div
-                      className="absolute bottom-0 left-0 p-6 flex items-end justify-center w-full h-full "
-                      initial={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <h3 className="text-white text-3xl font-semibold text-wrap ">
-                        {item.title}
-                      </h3>
-                    </motion.div>
+                <motion.div
+                  className={`h-[500px] rounded-lg overflow-clip bg-gray-100 md:bg-transparent ${
+                    isActive ? "cursor-default" : "cursor-pointer"
+                  }`}
+                >
+                  {!isActive && (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover rounded-lg brightness-75"
+                    />
                   )}
-                </AnimatePresence>
+                  <AnimatePresence>
+                    {isActive ? (
+                      <div className="flex h-full flex-col-reverse md:flex-row ">
+                        <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.4 }}
+                          className="flex-1 p-8 flex flex-col justify-center"
+                        >
+                          <motion.h2
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            className="text-2xl text-black font-medium mb-4"
+                          >
+                            {item.title}
+                          </motion.h2>
+                          <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-black leading-relaxed"
+                          >
+                            {item.description}
+                          </motion.p>
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, scale: 1.1 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 1.1 }}
+                          className="flex-1"
+                        >
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </motion.div>
+                      </div>
+                    ) : (
+                      <motion.div
+                        className="absolute bottom-0 left-0 p-6 flex items-end justify-center w-full h-full"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <h3 className="text-white text-3xl font-semibold text-wrap">
+                          {item.title}
+                        </h3>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </div>
