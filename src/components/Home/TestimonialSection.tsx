@@ -203,7 +203,7 @@ export function TestimonialsSection() {
             <span className="text-white/80">Testimonials</span>
           </div>
           <h2 className="text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-black to-black/70">
-            What Our Clients Say
+            What My Clients Says
           </h2>
           <motion.div
             className="stars flex justify-center gap-2 text-4xl"

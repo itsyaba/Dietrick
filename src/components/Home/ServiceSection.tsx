@@ -66,7 +66,7 @@ export default function ServicesSection() {
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                className="pl-4  flex items-center justify-between gap-16 md:gap-36 flex-col"
+                className="pl-4  flex items-center justify-between gap-16 md:gap-36 flex-col md:flex-row"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
