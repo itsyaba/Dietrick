@@ -11,7 +11,7 @@ export function Hero() {
     { href: "https://twitter.com", Icon: Twitter },
   ];
   return (
-    <div className="relative min-h-screen w-full px-12 pt-32 pb-12 overflow-hidden">
+    <div className="relative min-h-screen w-full px-2 md:px-12 pt-32 pb-12 overflow-hidden">
       {/* Gradient decoration */}
       <div className="absolute top-10 right-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/30 to-transparent rounded-full blur-xl  transform rotate-45" />
 

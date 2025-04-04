@@ -109,7 +109,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 ml-2">
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 400 }}
