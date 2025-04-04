@@ -72,7 +72,6 @@ export default function WhyWorkWithUs() {
                 transition: { duration: 0.4 },
               }}
               onViewportEnter={() => setHoveredItem(item.id)}
-              onViewportLeave={() => setHoveredItem(null)}
               onHoverStart={() => setHoveredItem(item.id)}
               onHoverEnd={() => setHoveredItem(null)}
             >
@@ -90,7 +89,7 @@ export default function WhyWorkWithUs() {
                 )}
                 <AnimatePresence>
                   {hoveredItem === item.id ? (
-                    <div className="flex h-full flex-col-reverse md:flex-row">
+                    <div className="flex h-full flex-col-reverse md:flex-row mt-36 md:mt-0">
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
