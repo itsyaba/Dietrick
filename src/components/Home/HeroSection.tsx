@@ -23,11 +23,11 @@ export function Hero() {
           className="flex flex-col gap-8 text-gray-950"
         >
           <div className="ml-">
-            <div className="text-[180px] leading-[0.9] tracking-tight ">
+            <div className="text-6xl md:text-[180px] leading-[0.9] tracking-tight ">
               <span className="font-bold relative z-10">
                 Dietrick
                 <motion.div
-                  className="absolute top-10 -right-24 "
+                  className="hidden md:block md:absolute top-10 -right-24 "
                   whileInView={{ scale: 1.02 }}
                 >
                   <img
@@ -48,10 +48,26 @@ export function Hero() {
                 Cyrus Grand
               </span>
               <span className="text-purple-600">.</span>
+              <motion.div
+                className="flex items-center justify-left my-3 md:hidden "
+                whileInView={{ scale: 1.02 }}
+              >
+                <img
+                  src={dietrick}
+                  alt="Profile"
+                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-2xl rotate-12"
+                />
+                {/* <div className="absolute w-full flex items-center gap-3 bg-gray-300 left-0 right-0 ">
+                    <span className="w-3 h-3 bg-purple-600 rounded-full" />
+                    <p className="text-lg ">
+                      Let's solve problems and create new ones
+                    </p>
+                  </div> */}
+              </motion.div>
             </div>
           </div>
 
-          <div className="flex items-start  justify-between gap-16 pl-4 flex-row ">
+          <div className="flex items-start  justify-between gap-16 pl-4 flex-col-reverse md:flex-row ">
             {/* Social links */}
             <div className="flex gap-6 pl-4">
               {socialLinks.map(({ href, Icon }, index) => (
