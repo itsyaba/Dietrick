@@ -14,11 +14,11 @@ function App() {
     <main className="min-h-screen bg-gray-50 font-poppins text-black overflow-clip">
       <Navbar />
       <Hero />
+      <Tape />
       <ServicesSection />
       {/* <WorkExperienceSection /> */}
       <WhyChooseUsSection />
       <AboutSection />
-      <Tape />
       <ProjectSection />
       <TestimonialsSection />
       <ContactSection />

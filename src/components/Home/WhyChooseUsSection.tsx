@@ -37,12 +37,12 @@ const galleryItems = [
 ];
 
 export default function WhyWorkWithUs() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>();
 
   return (
     <div className="w-full min-h-screen  px-12 py-24">
       <div className="w-full flex items-start md:items-baseline justify-center md:gap-24 flex-col md:flex-row">
-        <h1 className="text-7xl font-medium text-gray-400">03</h1>
+        <h1 className="text-7xl font-medium text-gray-400">04</h1>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,21 +58,21 @@ export default function WhyWorkWithUs() {
       </div>
       <div className="max-w-[1400px] mx-auto">
         <motion.div
-          className="md:flex gap-6 grid"
+          className="md:flex gap-36 md:gap-6 grid"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
               className="relative"
-              initial={{ flex: 1, y: 20 }}
+              initial={{ flex: 1 }}
               animate={{
                 flex: hoveredItem === item.id ? 3 : 1,
                 transition: { duration: 0.4 },
               }}
-              whileInView={{ opacity: 1, y: 0 }}
+              onViewportEnter={() => setHoveredItem(item.id)}
               onHoverStart={() => setHoveredItem(item.id)}
               onHoverEnd={() => setHoveredItem(null)}
             >
@@ -122,7 +122,7 @@ export default function WhyWorkWithUs() {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover rounded-lg brightness-75"
+                          className="w-full h-full object-cover rounded-lg"
                         />
                       </motion.div>
                     </div>
