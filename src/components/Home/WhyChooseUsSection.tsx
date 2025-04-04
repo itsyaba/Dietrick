@@ -61,7 +61,6 @@ export default function WhyWorkWithUs() {
           className="md:flex gap-36 md:gap-6 grid"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
           {galleryItems.map((item) => (
             <motion.div
@@ -73,6 +72,7 @@ export default function WhyWorkWithUs() {
                 transition: { duration: 0.4 },
               }}
               onViewportEnter={() => setHoveredItem(item.id)}
+              onViewportLeave={() => setHoveredItem(null)}
               onHoverStart={() => setHoveredItem(item.id)}
               onHoverEnd={() => setHoveredItem(null)}
             >
@@ -95,6 +95,7 @@ export default function WhyWorkWithUs() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.4 }}
                         className="flex-1 p-8 flex flex-col justify-center"
                       >
                         <motion.h2
@@ -131,8 +132,9 @@ export default function WhyWorkWithUs() {
                       className="absolute bottom-0 left-0 p-6 flex items-end justify-center w-full h-full "
                       initial={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <h3 className="text-white text-4xl font-semibold ">
+                      <h3 className="text-white text-3xl font-semibold text-wrap ">
                         {item.title}
                       </h3>
                     </motion.div>
