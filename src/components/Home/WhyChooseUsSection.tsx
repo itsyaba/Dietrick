@@ -66,7 +66,7 @@ export default function WhyWorkWithUs() {
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
-              className="relative"
+              className="relative "
               initial={{ flex: 1 }}
               animate={{
                 flex: hoveredItem === item.id ? 3 : 1,
@@ -77,7 +77,7 @@ export default function WhyWorkWithUs() {
               onHoverEnd={() => setHoveredItem(null)}
             >
               <motion.div
-                className={`relative h-[500px] rounded-lg overflow-hidden bg-gray-50  ${
+                className={`relative h-[500px] rounded-lg overflow-clip ${
                   hoveredItem === item.id ? "cursor-default" : "cursor-pointer"
                 }`}
               >
@@ -90,7 +90,7 @@ export default function WhyWorkWithUs() {
                 )}
                 <AnimatePresence>
                   {hoveredItem === item.id ? (
-                    <div className="flex h-full">
+                    <div className="flex h-full flex-col-reverse md:flex-row">
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
