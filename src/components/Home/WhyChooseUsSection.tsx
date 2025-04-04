@@ -16,7 +16,7 @@ const galleryItems = [
     description:
       "Data-driven, personalized campaigns that drive measurable results. Helped teams go from $0 to $100k in less than 6 weeks.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "tools",
@@ -24,7 +24,7 @@ const galleryItems = [
     description:
       "Full-service or collaborative options using industry-leading tools like Apollo, Instantly.ai, and Lemlist.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "global-reach",
@@ -32,22 +32,21 @@ const galleryItems = [
     description:
       "Break into APAC and LATAM markets with ease using our tested international growth playbook.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
 export default function WhyWorkWithUs() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>("meditation");
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
     <div className="w-full min-h-screen  px-12 py-24">
       <div className="w-full flex items-start md:items-baseline justify-center md:gap-24 flex-col md:flex-row">
-        <h1 className="text-7xl font-medium text-gray-400">04</h1>
+        <h1 className="text-7xl font-medium text-gray-400">03</h1>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "circIn" }}
-          viewport={{ once: true }}
           className="mb-16"
         >
           <h2 className="text-6xl md:text-7xl font-bold leading-tight">
@@ -59,20 +58,21 @@ export default function WhyWorkWithUs() {
       </div>
       <div className="max-w-[1400px] mx-auto">
         <motion.div
-          className="flex gap-6"
+          className="md:flex gap-6 grid"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
               className="relative"
-              initial={{ flex: 1 }}
+              initial={{ flex: 1, y: 20 }}
               animate={{
                 flex: hoveredItem === item.id ? 3 : 1,
                 transition: { duration: 0.4 },
               }}
+              whileInView={{ opacity: 1, y: 0 }}
               onHoverStart={() => setHoveredItem(item.id)}
               onHoverEnd={() => setHoveredItem(null)}
             >

@@ -1,12 +1,13 @@
 import { Hero } from "./components/Home/HeroSection";
 import { Navbar } from "./components/Home/Navbar";
 import ServicesSection from "./components/Home/ServiceSection";
-import WorkExperienceSection from "./components/Home/experience";
+// import WorkExperienceSection from "./components/Home/experience";
 import { TestimonialsSection } from "./components/Home/TestimonialSection";
 import AboutSection from "./components/Home/AboutSection";
 import ProjectSection from "./components/Home/ProjectSection";
 import ContactSection from "./components/Home/ContactSection";
 import WhyChooseUsSection from "./components/Home/WhyChooseUsSection";
+import Tape from "./components/Tape";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <Navbar />
       <Hero />
       <ServicesSection />
-      <WorkExperienceSection />
+      {/* <WorkExperienceSection /> */}
       <WhyChooseUsSection />
       <AboutSection />
+      <Tape />
       <ProjectSection />
       <TestimonialsSection />
       <ContactSection />
