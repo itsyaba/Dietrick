@@ -33,7 +33,7 @@ export default function WorkExperienceSection() {
   return (
     <div className="relative w-full px-4 py-16 overflow-hidden">
       {/* Section Header */}
-      <div className="w-full flex items-baseline justify-center gap-24">
+      <div className="w-full flex items-start md:items-baseline justify-center md:gap-24 flex-col md:flex-row">
         <h1 className="text-7xl font-medium text-gray-400">03</h1>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -42,7 +42,7 @@ export default function WorkExperienceSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-7xl font-bold leading-tight">
+          <h2 className="text-6xl md:text-7xl font-bold leading-tight">
             Work
             <br />
             <span className="font-peptit font-medium">Experience</span>
@@ -51,7 +51,7 @@ export default function WorkExperienceSection() {
       </div>
 
       {/* Experience Cards */}
-      <div className="flex flex-col md:flex-row min-h-[50vh] max-w-[90%] mx-auto">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-2 min-h-[50vh] max-w-[90%] mx-auto">
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.id}

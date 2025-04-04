@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 // import img form "@/assets/"
 import lead from "@/assets/lead.avif";
@@ -45,15 +44,15 @@ export default function ServicesSection() {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-purple-600 to-transparent opacity-20 translate-y-1/4 -translate-x-1/4 rotate-45 rounded-full"></div>
 
       <div className="">
-        <div className="w-full flex items-baseline justify-center gap-24 ">
+        <div className="w-full flex items-start md:items-baseline justify-center md:gap-24 flex-col md:flex-row">
           <h1 className="text-7xl font-medium text-gray-400">02</h1>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "circIn" }}
+            transition={{ duration: 0.6, ease: "backInOut" }}
             className="mb-16"
           >
-            <h2 className="text-7xl font-bold leading-tight">
+            <h2 className="text-6xl md:text-7xl font-bold leading-tight">
               How can I
               <br />
               <span className="font-peptit font-medium">help you?</span>
@@ -67,12 +66,12 @@ export default function ServicesSection() {
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                className="pl-4  flex items-center justify-between gap-36"
+                className="pl-4  flex items-center justify-between gap-16 md:gap-36 flex-col"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
-                <div className={` ${index % 2 && "order-2"}`}>
+                <div className={` ${index % 2 && "md:order-2"}`}>
                   <img
                     src={service.image}
                     alt={service.title}
@@ -90,12 +89,6 @@ export default function ServicesSection() {
                     <p className="text-gray-600 text-sm mb-2">
                       {service.description}
                     </p>
-                    <Link
-                      to="#"
-                      className="text-sm font-medium hover:opacity-65 text-blue-900 underline"
-                    >
-                      Learn more
-                    </Link>
                   </div>
                 </div>
               </motion.div>
