@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 // import img form "@/assets/"
-import lead from "@/assets/lead.avif";
-import email from "@/assets/email.avif";
-import teams from "@/assets/teamss.avif";
-import calling from "@/assets/call.avif";
+import lead from "@/assets/icons/lead.gif";
+import email from "@/assets/icons/email.gif";
+import teams from "@/assets/icons/team.gif";
+import calling from "@/assets/icons/call.gif";
 
 export default function ServicesSection() {
   const services = [
@@ -75,7 +75,7 @@ export default function ServicesSection() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="rounded-[8rem] rotate-12"
+                    className="rounded-[8rem] "
                   />
                 </div>
                 <div className="">
