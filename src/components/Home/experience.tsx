@@ -50,7 +50,6 @@ export default function WorkExperienceSection() {
         </motion.div>
       </div>
 
-      {/* Experience Cards */}
       <div className="flex flex-col md:flex-row gap-12 md:gap-2 min-h-[50vh] max-w-[90%] mx-auto">
         {experiences.map((exp, index) => (
           <motion.div
