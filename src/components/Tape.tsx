@@ -18,7 +18,7 @@ const Tape = () => {
         <div className="-mx-1">
           <div className="flex [mask-image:linear-gradient(to_right,transparent,black_20%,black_90%,transparent)]">
             <div className="flex flex-none gap-4 py-2 animate-move-left [animation-duration:30s]">
-              {[...new Array(9)].fill(0).map((_, idx) => (
+              {[...new Array(3)].fill(0).map((_, idx) => (
                 <Fragment key={idx}>
                   {words.map((word, i) => (
                     <div key={word} className="flex items-center gap-13">
