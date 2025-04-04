@@ -122,7 +122,7 @@ export default function WhyWorkWithUs() {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-full h-full object-cover rounded-lg brightness-75"
                         />
                       </motion.div>
                     </div>
